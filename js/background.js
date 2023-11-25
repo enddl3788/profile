@@ -2,6 +2,7 @@ const sin = Math.sin;
 const cos = Math.cos;
 const PI = Math.PI;
 const fov = 150;
+const speed = 4;
 
 class Dot {
   constructor(x, y, z) {
@@ -93,7 +94,7 @@ function render() {
   let dot;
   for (let i = 0; i < dots.length; i++) {
     dot = dots[i];
-    dot.z -= 4;
+    dot.z -= speed;
     if (dot.z < -fov) {
       dot.z += (innerWidth+innerHeight)/2;
     }

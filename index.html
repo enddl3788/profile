@@ -15,7 +15,24 @@
 	<meta property="og:type" content="website">
 
 	<!-- 파비콘 -->
-	<link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="D:\github\enddl3788.github.io\img\favicon\favicon_1.png" type="image/x-icon">
+	<link id= "favicon" rel="icon" href="#" type="image/x-icon">
+
+	<script>
+		// favicon
+		  var faviconRoute = './img/favicon/';
+		  var faviconNames = ['favicon_1.png', 'favicon_2.png', 'favicon_3.png', 'favicon_4.png', 'favicon_5.png',
+						  'favicon_6.png', 'favicon_7.png', 'favicon_8.png']; 
+	  
+		  var idx = 0;
+	  
+		  setInterval(func, 300);
+	  
+		  function func() {
+			  document.querySelector("#favicon").setAttribute('href', faviconRoute + faviconNames[idx++]);
+			  idx %= faviconNames.length;
+		  }
+	  </script>
 
 	<title>개발자 송예빈</title>
 
@@ -25,15 +42,22 @@
 	<link rel="stylesheet" href="./css/animation.css">
 	<link rel="stylesheet" href="./css/default.css">
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/background.css">
 
 </head>
+
 <body>
 	<div class="cursor"></div>
-    <main>
-        <!-- 프로젝트 목록이나 포트폴리오 섹션을 추가하세요 -->
+	<background>
 		<div class="follower">
 			<canvas class="canvas"></canvas>
 		</div>
+		<img class="earthImgBtn" src="D:\github\enddl3788.github.io\img\earth.gif"  onmouseover="scaleUp()" onmouseout="scaleDown()" alt="이미지 버튼">
+		<img class="clickImg" src="D:\github\enddl3788.github.io\img\click.gif" alt="이미지 버튼">
+	</background>
+
+    <main>
+		
 	</main>
 
 	<!-- 여기에 JavaScript 파일 링크 추가 -->
