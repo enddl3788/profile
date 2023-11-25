@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+  
+.earthImgBtn {
+    width: 30%; /* 너비 조절 */
+    height: auto; /* 높이는 자동으로 조절되도록 설정 */
+    position: absolute; 
+    transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+    transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+  }
+.clickImg {
+  width: 20%; /* 너비 조절 */
+  height: auto; /* 높이는 자동으로 조절되도록 설정 */
+  position: absolute; 
+  pointer-events: none;
+  transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+  transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+}

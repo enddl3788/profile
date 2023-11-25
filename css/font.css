@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'NeoDunggeunmo_code';
+    src:url(../fonts/neodgm_code.woff) format("woff"),
+        url(../fonts/neodgm_code.woff2) format("woff2");
+    /* 이런식으로 weight를 지정해서 사용할 수도 있다!*/
+} 
+
+body {
+    font-family: 'NeoDunggeunmo_code';
+}

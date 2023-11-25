@@ -42,27 +42,31 @@
 	<link rel="stylesheet" href="./css/animation.css">
 	<link rel="stylesheet" href="./css/default.css">
 	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" href="./css/background.css">
+	<link rel="stylesheet" href="./css/intro.css">
+	<link rel="stylesheet" href="./css/font.css">
 
 </head>
 
 <body>
-	<div class="cursor"></div>
-	<background>
+	<intro>
+		<div class="cursor"></div>
 		<div class="follower">
 			<canvas class="canvas"></canvas>
 		</div>
 		<img class="earthImgBtn" src="./img/earth.gif"  onmouseover="scaleUp()" onmouseout="scaleDown()" alt="이미지 버튼">
 		<img class="clickImg" src="./img/click.gif" alt="이미지 버튼">
-	</background>
+		<p class="text-center fixed-bottom">이 웹에서 사용된 모든 소스의 저작권은 제작자에게 있으며, 상업 및 무단 배포를 금지합니다.</p>
+	</intro>
 
     <main>
-		
+		<img class="cityImg" src="./img/city.png" alt="배경">
+		<img class="cityImg z-2" src="./img/city_wood.png" alt="나무" >
+		<div class="astronautImg"></div>
 	</main>
 
 	<!-- 여기에 JavaScript 파일 링크 추가 -->
 	<script src="./js/main.js" charset="utf-8"></script>
-	<script src="./js/background.js" charset="utf-8"></script>
+	<script src="./js/intro.js" charset="utf-8"></script>
 	<script src="./js/mouseAnimation.js" charset="utf-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
