@@ -3,7 +3,7 @@ body {
 }
 
 .follower {
-  position: fixed; 
+  position: absolute; 
   width: 200%;
   height: 200%;
   z-index: -1;

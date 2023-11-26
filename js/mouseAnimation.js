@@ -5,6 +5,7 @@ let followerY = window.innerHeight / 2;
 let earthImgBtnX = window.innerWidth / 2;
 let earthImgBtnY = window.innerHeight / 2;
 let clickEvent = 0;
+let currentSize;
 
 const follower = document.querySelector(".follower");
 const earthImgBtn = document.querySelector(".earthImgBtn");
@@ -59,8 +60,12 @@ earthImgBtn.addEventListener("mousedown", function () {
     clickEvent = 1;
     // 20ms 간격으로 크기를 키우기 위한 setInterval
     scaleInterval = setInterval(function () {
-        let currentSize = parseFloat(getComputedStyle(earthImgBtn).getPropertyValue("transform").split(",")[3].trim());
+        currentSize = parseFloat(getComputedStyle(earthImgBtn).getPropertyValue("transform").split(",")[3].trim());
         earthImgBtn.style.transform = "scale(" + (currentSize + scaleAmount) + ")";
+            // 만약 특정 크기에 도달하면 clearInterval을 사용하여 종료
+        if (currentSize >= 23) {
+            clearInterval(scaleInterval);
+        }
     }, 20);
     clickImg.style.display = "none";    // 클릭 이미지 숨기기
     setTimeout(function () {
