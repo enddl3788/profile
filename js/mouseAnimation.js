@@ -11,6 +11,7 @@ const follower = document.querySelector(".follower");
 const earthImgBtn = document.querySelector(".earthImgBtn");
 const clickImg = document.querySelector(".clickImg");
 const astronautImg = document.querySelector(".astronautImg");
+const skill_machine = document.querySelector(".skill_machine");
 
 const intro = document.querySelector('#intro');
 const main = document.querySelector('#main');
@@ -19,6 +20,17 @@ main.style.display = "none";    //숨기기
 
 let scaleAmount = 0.5; // 크기를 키우는 양 설정
 let scaleInterval;
+
+function setZIndex(element1, element2) {
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+  
+    if (rect1.bottom < rect2.bottom) {
+      element1.style.zIndex = 2;
+    } else {
+      element1.style.zIndex = 4;
+    }
+  }
 
 function animateFollower() {
     // 간단한 보간을 사용하여 부드러운 이동 구현
@@ -55,6 +67,8 @@ function animateFollower() {
 
     clickImg.style.left = window.innerWidth - ((window.innerWidth * 0.2) / 2) - followerX + "px";
     clickImg.style.top = window.innerHeight - ((window.innerHeight * 0.2)) -followerY + "px";
+
+    setZIndex(astronautImg, skill_machine);
 
     requestAnimationFrame(animateFollower);
 }

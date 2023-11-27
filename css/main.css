@@ -12,7 +12,7 @@
   position: fixed;
   width: 80px;
   height: 80px;
-  z-index: 3;
+  z-index: 4;
   background-size: cover;
   pointer-events: none;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
@@ -34,7 +34,7 @@
   position: fixed;
   right: 10vw;
   bottom: 25vh;
-  z-index: 2;
+  z-index: 3;
   width: auto;
   height: 20%;
 }
