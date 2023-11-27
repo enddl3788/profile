@@ -12,8 +12,8 @@ const earthImgBtn = document.querySelector(".earthImgBtn");
 const clickImg = document.querySelector(".clickImg");
 const astronautImg = document.querySelector(".astronautImg");
 
-const intro = document.querySelector('intro');
-const main = document.querySelector('main');
+const intro = document.querySelector('#intro');
+const main = document.querySelector('#main');
 
 main.style.display = "none";    //숨기기
 
@@ -31,15 +31,19 @@ function animateFollower() {
     const tolerance = 25; // 허용 범위 설정
 
     if (mouseX > followerX + tolerance) {
-    astronautImg.style.backgroundImage = "url('img/astronaut_right.gif')";
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_right.gif')";
     } else if (mouseX < followerX - tolerance) {
-    astronautImg.style.backgroundImage = "url('img/astronaut_left.gif')";
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_left.gif')";
+    } else if (mouseY > followerY + tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_bottom.gif')";
+    } else if (mouseY < followerY - tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_top.gif')";
     } else {
-    astronautImg.style.backgroundImage = "url('img/astronaut.gif')";
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut.gif')";
     }
 
     astronautImg.style.left = followerX + "px";
-    //astronautImg.style.top = followerY + "px";
+    astronautImg.style.top = followerY + "px";
 
     // 간단한 보간을 사용하여 부드러운 이동 구현
     earthImgBtnX += (mouseX - earthImgBtnX) * 0.1;
@@ -113,8 +117,9 @@ function fadeOut(el, time) {
         last = +new Date();
 
         if (+el.style.opacity > 0) {
-            el.style.display = "none";    //숨기기
             (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        } else {
+            el.style.display = "none"; // 투명도가 0 이하일 때만 숨기기
         }
     };
 
@@ -124,6 +129,7 @@ function fadeOut(el, time) {
 // 페이드 인 효과
 function fadeIn(el, time) {
     el.style.opacity = 0;
+    el.style.display = "block";
 
     var last = +new Date();
     var tick = function () {
@@ -131,7 +137,6 @@ function fadeIn(el, time) {
         last = +new Date();
 
         if (+el.style.opacity < 1) {
-            el.style.display = "block";    //숨기기
             (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
         }
     };

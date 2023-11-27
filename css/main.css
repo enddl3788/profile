@@ -1,16 +1,40 @@
+.main-background {
+  z-index: 0;
+  width: 100vw;  
+  height: 100vh;
+  /* 타일의 배경 이미지 설정 */
+  background-image: url("../img/object/tile.png");
+  /* 이미지 반복 설정 */
+  background-repeat: repeat;
+}
+
 .astronautImg {
-  position: absolute;
+  position: fixed;
   width: 80px;
   height: 80px;
-  z-index: 1;
-  background: url(../img/astronaut.gif);
+  z-index: 3;
   background-size: cover;
   pointer-events: none;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
-.cityImg {
-  position: absolute;
-  pointer-events: none;
-  transform: translate(-50%, -40%); /* 중앙으로 이동하는 부분을 추가해줘 */
+.roadwayImg {
+  bottom : 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(0%, -20%); 
+  /* 타일의 배경 이미지 설정 */
+  background-image: url("../img/object/roadway.png");
+  /* 이미지 반복 설정 */
+  background-repeat: repeat-x;
+}
+
+.skill_machine {
+  position: fixed;
+  right: 10vw;
+  bottom: 25vh;
+  z-index: 2;
+  width: auto;
+  height: 20%;
 }

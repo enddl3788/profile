@@ -1,3 +1,9 @@
-body{
-    background-color:#5747e5;
+body, html{
+    background-color:black;
+    overflow: hidden; /* 마우스 포인터 위치에 따라 스크롤을 막아줘 */
+}
+
+.container {
+    margin: 0;
+    padding: 0;
 }

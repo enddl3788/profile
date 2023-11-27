@@ -1,23 +1,19 @@
-body {
-  overflow: hidden; /* 마우스 포인터 위치에 따라 스크롤을 막아줘 */
-}
-
 .follower {
-  position: absolute; 
-  width: 200%;
-  height: 200%;
-  z-index: -1;
+  position: fixed; 
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
   pointer-events: none; /* 마우스 이벤트를 무시해줘 */
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
   transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
 }
 
 .cursor {
-  position: absolute;
+  position: fixed; 
   width: 80px;
   height: 80px;
-  z-index: 1000;
-  background: url(../img/cursor.gif);
+  z-index: 1;
+  background: url(../img/astronaut/cursor.gif);
   background-size: cover;
   pointer-events: none;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
