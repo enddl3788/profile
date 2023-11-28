@@ -1,3 +1,27 @@
+#main-top {
+  width: 100%;
+  height: 56.25vw; /* 9 / 16 * 100vw */
+  overflow: hidden;
+  position: static;
+}
+
+#main-mid {
+  width: 90%;
+  height: 56.25vw; /* 9 / 16 * 100vw */
+  overflow: hidden;
+  position: static;
+  margin: 5%;
+  background-color: beige;
+  padding: 5%;
+}
+
+#main-bottom {
+  width: 100%;
+  height: 56.25vw; /* 9 / 16 * 100vw */
+  overflow: hidden;
+  position: static;
+}
+
 .main-background {
   z-index: 0;
   width: 100vw;  
@@ -10,26 +34,43 @@
 
 .astronautImg {
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: 10vw;
+  height: auto;
   z-index: 4;
   background-size: cover;
   pointer-events: none;
+  transform: translate(-50%, -90%); /* 중앙으로 이동하는 부분을 추가해줘 */
+}
+
+.subwayImg {
+  z-index: 1;
+  width: 100vw;
+  height: auto;
+  transform: translate(0%, -15%); 
+}
+
+.subwayText-left{
+  font-size: calc(1.5vw);
+  position: fixed;
+  top: 10.5vw;
+  left: 27.5vw;
+  z-index: 2;
+  width: 30vw;
+  height: auto;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
-.roadwayImg {
-  bottom : 0;
-  z-index: 1;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(0%, -20%); 
-  /* 타일의 배경 이미지 설정 */
-  background-image: url("../img/object/roadway.png");
-  /* 이미지 반복 설정 */
-  background-repeat: repeat-x;
+.subwayText-right{
+  font-size: 1.5vw;
+  position: fixed;
+  top: 10.5vw;
+  left: 96vw;
+  z-index: 2;
+  width: 30vw;
+  height: auto;
+  transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
-
+/*
 .skill_machine {
   position: fixed;
   right: 10vw;
@@ -38,3 +79,4 @@
   width: auto;
   height: 20%;
 }
+*/

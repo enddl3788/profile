@@ -12,6 +12,9 @@ const earthImgBtn = document.querySelector(".earthImgBtn");
 const clickImg = document.querySelector(".clickImg");
 const astronautImg = document.querySelector(".astronautImg");
 const skill_machine = document.querySelector(".skill_machine");
+const trainImg = document.querySelector(".subwayImg");
+
+const mainTop = document.querySelector('#main-top');
 
 const intro = document.querySelector('#intro');
 const main = document.querySelector('#main');
@@ -32,6 +35,23 @@ function setZIndex(element1, element2) {
     }
   }
 
+// 마우스 충돌 감지
+function collisionCheck(element1) { 
+    const rect1 = element1.getBoundingClientRect();
+    const top = trainImg.getBoundingClientRect();
+    const bottom = mainTop.getBoundingClientRect();
+    if (followerY > top.bottom && followerY < bottom.bottom) { // followerY가 rect2.bottom보다 클 때만 위치 변경
+        element1.style.left = followerX + "px";
+        element1.style.top = followerY + "px";
+    } else if (followerY > bottom.bottom) {
+        element1.style.left = followerX + "px";
+        element1.style.top = bottom.bottom + "px";
+    } else if (followerY < top.bottom) {
+        element1.style.left = followerX + "px";
+        element1.style.top = top.bottom + "px";
+    }
+}
+
 function animateFollower() {
     // 간단한 보간을 사용하여 부드러운 이동 구현
     followerX += (mouseX - followerX) * 0.1;
@@ -39,23 +59,6 @@ function animateFollower() {
 
     follower.style.left = followerX + "px";
     follower.style.top = followerY + "px";
-
-    const tolerance = 25; // 허용 범위 설정
-
-    if (mouseX > followerX + tolerance) {
-        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_right.gif')";
-    } else if (mouseX < followerX - tolerance) {
-        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_left.gif')";
-    } else if (mouseY > followerY + tolerance) {
-        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_bottom.gif')";
-    } else if (mouseY < followerY - tolerance) {
-        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_top.gif')";
-    } else {
-        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut.gif')";
-    }
-
-    astronautImg.style.left = followerX + "px";
-    astronautImg.style.top = followerY + "px";
 
     // 간단한 보간을 사용하여 부드러운 이동 구현
     earthImgBtnX += (mouseX - earthImgBtnX) * 0.1;
@@ -68,7 +71,25 @@ function animateFollower() {
     clickImg.style.left = window.innerWidth - ((window.innerWidth * 0.2) / 2) - followerX + "px";
     clickImg.style.top = window.innerHeight - ((window.innerHeight * 0.2)) -followerY + "px";
 
-    setZIndex(astronautImg, skill_machine);
+    const tolerance = 25; // 허용 범위 설정
+
+    // 이동 애니메이션
+    if (mouseX > followerX + tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_right.gif')";
+    } else if (mouseX < followerX - tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_left.gif')";
+    } else if (mouseY > followerY + tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_bottom.gif')";
+    } else if (mouseY < followerY - tolerance) {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut_top.gif')";
+    } else {
+        astronautImg.style.backgroundImage = "url('img/astronaut/astronaut.gif')";
+    }
+    collisionCheck(astronautImg);
+    //astronautImg.style.left = followerX + "px";
+    //astronautImg.style.top = followerY + "px";
+
+    //setZIndex(astronautImg, skill_machine);
 
     requestAnimationFrame(animateFollower);
 }
