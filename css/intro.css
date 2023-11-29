@@ -24,3 +24,7 @@ canvas {
   transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
   transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
 }
+
+.intro_text {
+  font-size: 2vw;
+}

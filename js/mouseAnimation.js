@@ -14,7 +14,7 @@ const astronautImg = document.querySelector(".astronautImg");
 const skill_machine = document.querySelector(".skill_machine");
 const trainImg = document.querySelector(".subwayImg");
 
-const mainTop = document.querySelector('#main-top');
+const main_1 = document.querySelector('#main_1');
 
 const intro = document.querySelector('#intro');
 const main = document.querySelector('#main');
@@ -37,9 +37,8 @@ function setZIndex(element1, element2) {
 
 // 마우스 충돌 감지
 function collisionCheck(element1) { 
-    const rect1 = element1.getBoundingClientRect();
     const top = trainImg.getBoundingClientRect();
-    const bottom = mainTop.getBoundingClientRect();
+    const bottom = main_1.getBoundingClientRect();
     if (followerY > top.bottom && followerY < bottom.bottom) { // followerY가 rect2.bottom보다 클 때만 위치 변경
         element1.style.left = followerX + "px";
         element1.style.top = followerY + "px";

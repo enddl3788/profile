@@ -1,13 +1,23 @@
-#main-top {
+#main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* 타일의 배경 이미지 설정 */
+  background-image: url("../img/object/tile.png");
+  /* 이미지 반복 설정 */
+  background-repeat: repeat;
+}
+
+#main_1 {
   width: 100%;
   height: 56.25vw; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
 }
 
-#main-mid {
+#main_2 {
   width: 90%;
-  height: 56.25vw; /* 9 / 16 * 100vw */
+  height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
   margin-left: 5%;
@@ -20,24 +30,27 @@
   border-top-right-radius: 15px;
 }
 
-#main-bottom {
+#main_3 {
   width: 90%;
-  height: 56.25vw; /* 9 / 16 * 100vw */
+  height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 5%;
   background-color: white;
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 5%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
 .main-background {
+  position: relative;
   z-index: 0;
-  width: 100vw;  
-  height: 100%;
+  width: 100%;  
+  height: auto;
   /* 타일의 배경 이미지 설정 */
   background-image: url("../img/object/tile.png");
   /* 이미지 반복 설정 */
@@ -54,7 +67,16 @@
   transform: translate(-50%, -90%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
+.subwayImg_img {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: auto;
+  transform: translate(0%, -15%); 
+}
+
 .subwayImg {
+  position: absolute;
   z-index: 1;
   width: 100vw;
   height: auto;
@@ -65,10 +87,8 @@
   font-size: 1.5vw;
   position: absolute;
   top: 10.5vw;
-  left: 27.5vw;
+  left: 20vw;
   z-index: 2;
-  width: 30vw;
-  height: auto;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
@@ -76,19 +96,19 @@
   font-size: 1.5vw;
   position: absolute;
   top: 10.5vw;
-  left: 96vw;
+  left: 88vw;
+  white-space: nowrap;
   z-index: 2;
-  width: 30vw;
-  height: auto;
   transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
-/*
-.skill_machine {
+
+.goupbtn {
+  bottom: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 80%;
+  background-color: #ffffff;
   position: fixed;
-  right: 10vw;
-  bottom: 25vh;
-  z-index: 3;
-  width: auto;
-  height: 20%;
+  z-index: 2;
 }
-*/
