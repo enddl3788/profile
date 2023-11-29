@@ -1,3 +1,7 @@
+#intro {
+  overflow: hidden; /* 마우스 포인터 위치에 따라 스크롤을 막아줘 */
+}
+
 canvas {
   width: 100vw;
   height: 100vh;

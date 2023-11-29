@@ -10,22 +10,34 @@
   height: 56.25vw; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
-  margin: 5%;
-  background-color: beige;
-  padding: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 #main-bottom {
-  width: 100%;
+  width: 90%;
   height: 56.25vw; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .main-background {
   z-index: 0;
   width: 100vw;  
-  height: 100vh;
+  height: 100%;
   /* 타일의 배경 이미지 설정 */
   background-image: url("../img/object/tile.png");
   /* 이미지 반복 설정 */
@@ -50,8 +62,8 @@
 }
 
 .subwayText-left{
-  font-size: calc(1.5vw);
-  position: fixed;
+  font-size: 1.5vw;
+  position: absolute;
   top: 10.5vw;
   left: 27.5vw;
   z-index: 2;
@@ -62,7 +74,7 @@
 
 .subwayText-right{
   font-size: 1.5vw;
-  position: fixed;
+  position: absolute;
   top: 10.5vw;
   left: 96vw;
   z-index: 2;
