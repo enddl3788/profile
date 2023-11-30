@@ -15,12 +15,12 @@ const astronautImg = document.querySelector(".astronautImg");
 const skill_machine = document.querySelector(".skill_machine");
 const trainImg = document.querySelector(".subwayImg");
 
-const main_1_1 = document.querySelector('#main_1_1');
-
-const intro = document.querySelector('#intro');
 const main_1 = document.querySelector('#main_1');
 
-main_1.style.display = "none";    //숨기기
+const intro = document.querySelector('#intro');
+const main = document.querySelector('#main');
+
+main.style.display = "none";    //숨기기
 
 let scaleAmount = 0.5; // 크기를 키우는 양 설정
 let scaleInterval;
@@ -39,7 +39,7 @@ function setZIndex(element1, element2) {
 // 마우스 충돌 감지
 function collisionCheck(element1) { 
     const top = trainImg.getBoundingClientRect();
-    const bottom = main_1_1.getBoundingClientRect();
+    const bottom = main_1.getBoundingClientRect();
     if (followerY > top.bottom && followerY < bottom.bottom) { // followerY가 rect2.bottom보다 클 때만 위치 변경
         element1.style.left = followerX + "px";
         element1.style.top = followerY + "px";
@@ -109,7 +109,7 @@ earthImgBtn.addEventListener("mousedown", function () {
     clickImg.style.display = "none";    // 클릭 이미지 숨기기
     setTimeout(function () {
         fadeOut(intro, 1000);
-        fadeIn(main_1, 1000);
+        fadeIn(main, 1000);
     }, 1000);
     clickEvent = 0;
 });
@@ -181,18 +181,18 @@ function fadeIn(el, time) {
 }
 
 function scaleUp(el) {
+    const targetScaleUp = document.querySelector(el);
     if(clickEvent == 0){
-        el.style.transform = "scale(1.1)"; // 10% 크게 만들기
+        targetScaleUp.style.transform = "scale(1.2)"; // 20% 크게 만들기
     }
-console.error(`scaleUp` + el);
     //clickImg.style.display = "block";   // 클릭 이미지 보이기
 }
 
 function scaleDown(el) {
+    const targetScaleDown = document.querySelector(el);
     if(clickEvent == 0){
-        el.style.transform = "scale(1)"; // 10% 크게 만들기
+        targetScaleDown.style.transform = "scale(1)"; // 10% 크게 만들기
     }
-    console.error(`scaleDown`);
     //clickImg.style.display = "none";    // 클릭 이미지 숨기기
 }
 

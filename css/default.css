@@ -16,7 +16,8 @@ body {
 }
 
 .text {
-    pointer-events: none;
+    /*none의 반대*/
+    pointer-events: all;
     font-size: 2.5vw
 }
 

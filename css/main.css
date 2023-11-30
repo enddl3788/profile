@@ -8,14 +8,14 @@
   background-repeat: repeat;
 }
 
-#main_1_1 {
+#main_1 {
   width: 100%;
   height: 56.25vw; /* 9 / 16 * 100vw */
   overflow: hidden;
-  position: static;
+  position: relative;
 }
 
-#main_1_2 {
+.main_top {
   width: 90%;
   height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
@@ -30,7 +30,7 @@
   border-top-right-radius: 15px;
 }
 
-#main_1_3 {
+.main_bottom {
   width: 90%;
   height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
@@ -51,6 +51,7 @@
   z-index: 0;
   width: 100%;  
   height: auto;
+  margin-bottom: 5%;
   /* 타일의 배경 이미지 설정 */
   background-image: url("../img/object/tile.png");
   /* 이미지 반복 설정 */
@@ -104,13 +105,26 @@
 }
 
 .goupbtn {
+  max-width: 80px;
   bottom: 5%;
   right: 5%;
-  width: 50px;
+  width: 10%;
   height: auto;
   border-radius: 80%;
   position: fixed;
   z-index: 5;
+  transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+  transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+}
+
+.nextBtn {
+  position: absolute;
+  bottom: 30%;
+  right: 10%;
+  width: 10%;
+  height: auto;
+  border-radius: 80%;
+  z-index: 3;
   transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
   transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
 }

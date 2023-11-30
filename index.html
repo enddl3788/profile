@@ -57,62 +57,136 @@
 			<div class="follower">
 				<canvas class="canvas"></canvas>
 			</div>
-			<img class="earthImgBtn" src="./img/earth.gif"  onmouseover="scaleUp(earthImgBtn)" onmouseout="scaleDown(earthImgBtn)" alt="이미지 버튼">
+			<img class="earthImgBtn" src="./img/earth.gif"  onmouseover="scaleUp('.earthImgBtn')" onmouseout="scaleDown('.earthImgBtn')" alt="이미지 버튼">
 			<img class="clickImg" src="./img/click.gif" alt="이미지 버튼">
 		</section>
 
-		<section class="main" id="main_1">
+		<section class="main" id="main">
 			<!--
 			<img class="skill_machine" src="./img/object/skill_machine.gif" alt="기술 스택">
 			-->
 			<div class="main-background">
-				<div id="main_1_1">
-					<p class="subwayText-left"><big><strong>[자기소개] ▶</strong></big> 기술스택</p>
-					<p class="subwayText-right"><big><strong>[자기소개] ▶</strong></big> 기술스택</p>
-					<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
+				<div id="main_1">
+					<section id="introduction_main">
+						<p class="subwayText-left"><big><strong>[자기소개] ▶</strong></big> 기술 스택</p>
+						<p class="subwayText-right"><big><strong>[자기소개] ▶</strong></big> 기술 스택</p>
+						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
+						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#introduction','#skill')" alt="다음으로">
+					</section>
+
+					<section id="skill_main">
+						<p class="subwayText-left">자기소개 <big><strong>▶ [기술 스택] ▶</strong></big> 개인 프로젝트</p>
+						<p class="subwayText-right">자기소개 <big><strong>▶ [기술 스택] ▶</strong></big> 개인 프로젝트</p>
+						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
+						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#skill','#solo')" alt="다음으로">
+					</section>
+
+					<section id="solo_main">
+						<p class="subwayText-left">기술 스택 <big><strong>▶ [개인 프로젝트] ▶</strong></big> 팀 프로젝트</p>
+						<p class="subwayText-right">기술 스택 <big><strong>▶ [개인 프로젝트] ▶</strong></big> 팀 프로젝트</p>
+						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
+						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#solo','#team')" alt="다음으로">
+					</section>
+
+					<section id="team_main">
+						<p class="subwayText-left">개인 프로젝트 <big><strong>▶ [팀 프로젝트]</strong></big></p>
+						<p class="subwayText-right">개인 프로젝트 <big><strong>▶ [팀 프로젝트]</strong></big></p>
+						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
+					</section>
+					
 					<img class="subwayImg" src="./img/object/train.gif" alt="지하철">
 					<img class="astronautImg" src="./img/object/gone.png" alt="캐릭터">
+					<span onclick="goTo('main_2')"></span>
 				</div>
 
-				<h1>
-					<span>아</span>
-					<span>래</span>
-					<span>로</span>
-					<span> </span>
-					<span>스</span>
-					<span>크</span>
-					<span>롤</span>
-					<span>하</span>
-					<span>여</span>
-					<span> </span>
-					<span>이</span>
-					<span>동</span>
-				  </h1>
+				<section id="introduction">
+					<div class="main_top" id="main_2">
+						<!--https://metromapmaker.com/?map=jnDNERKy-->
+						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
+						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
+						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
+						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+					</div>
+		
+					<div class="main_bottom" id="main_3">
+						<hr/>
+						<p class="text"><big><strong>🏫 학력</strong></big></p>
+						<p class="text"><strong>컴퓨터공학과 학사</strong></p>
+						<p class="text">성결대학교 - 경기도 안양시</p>
+						<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
+						<hr/>
+						<p class="text"><big><strong>📱 연락처</strong></big></p>
+						<p class="text">📞 010-2866-3788</p>
+						<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
+						<p class="text">🔗 <a href="https://play.google.com/store/apps/dev?id=7544782687645797857">play.google.com/store/apps/dev?id=7544782687645797857</a></p>
+						<p class="text">🐱 <a href="https://github.com/enddl3788">github.com/enddl3788</a></p>
+					</div>
+				</section>
 
-				<div id="main_1_2">
-					<!--https://metromapmaker.com/?map=jnDNERKy-->
-					<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
-					<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
-					<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
-					<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
-				</div>
-	
-				<div id="main_1_3">
-					<hr/>
-					<p class="text"><big><strong>🏫 학력</strong></big></p>
-					<p class="text"><strong>컴퓨터공학과 학사</strong></p>
-					<p class="text">성결대학교 - 경기도 안양시</p>
-					<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
-					<hr/>
-					<p class="text"><big><strong>📱 연락처</strong></big></p>
-					<p class="text">📞 010-2866-3788</p>
-					<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
-					<p class="text">🔗 play.google.com/store/apps/dev?id=7544782687645797857</p>
-					<p class="text">🐱 github.com/enddl3788</p>
-				</div>
-				<img class="goupbtn" src="./img/btn_up.gif" onmouseover="scaleUp(goupbtn)" onmouseout="scaleDown(goupbtn)" onclick="goToTop()" alt="상단이동 버튼">
+				<section id="skill">
+					<div class="main_top" id="main_4">
+						<!--https://metromapmaker.com/?map=jnDNERKy-->
+						<p class="text"><big><strong>언어</strong></big></p>
+					</div>
+		
+					<div class="main_bottom" id="main_5">
+						<hr/>
+						<p class="text"><big><strong>프로그램</strong></big></p>
+					</div>
+				</section>
+
+				<section id="solo">
+					<div class="main_top" id="main_6">
+						<!--https://metromapmaker.com/?map=jnDNERKy-->
+						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
+						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
+						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
+						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+					</div>
+		
+					<div class="main_bottom" id="main_7">
+						<hr/>
+						<p class="text"><big><strong>🏫 학력</strong></big></p>
+						<p class="text"><strong>컴퓨터공학과 학사</strong></p>
+						<p class="text">성결대학교 - 경기도 안양시</p>
+						<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
+						<hr/>
+						<p class="text"><big><strong>📱 연락처</strong></big></p>
+						<p class="text">📞 010-2866-3788</p>
+						<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
+						<p class="text">🔗 <a href="https://play.google.com/store/apps/dev?id=7544782687645797857">play.google.com/store/apps/dev?id=7544782687645797857</a></p>
+						<p class="text">🐱 <a href="https://github.com/enddl3788">github.com/enddl3788</a></p>
+					</div>
+				</section>
+
+				<section id="team">
+					<div class="main_top" id="main_8">
+						<!--https://metromapmaker.com/?map=jnDNERKy-->
+						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
+						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
+						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
+						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+					</div>
+		
+					<div class="main_bottom" id="main_9">
+						<hr/>
+						<p class="text"><big><strong>🏫 학력</strong></big></p>
+						<p class="text"><strong>컴퓨터공학과 학사</strong></p>
+						<p class="text">성결대학교 - 경기도 안양시</p>
+						<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
+						<hr/>
+						<p class="text"><big><strong>📱 연락처</strong></big></p>
+						<p class="text">📞 010-2866-3788</p>
+						<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
+						<p class="text">🔗 <a href="https://play.google.com/store/apps/dev?id=7544782687645797857">play.google.com/store/apps/dev?id=7544782687645797857</a></p>
+						<p class="text">🐱 <a href="https://github.com/enddl3788">github.com/enddl3788</a></p>
+					</div>
+				</section>
+
+				<img class="goupbtn" src="./img/btn_up.gif" onmouseover="scaleUp('.goupbtn')" onmouseout="scaleDown('.goupbtn')" onclick="goToTop()" alt="상단이동 버튼">
 			</div>
 		</section>
+
 
 			<!-- 여기에 JavaScript 파일 링크 추가 -->
 			<script src="./js/main.js" charset="utf-8"></script>
