@@ -16,9 +16,11 @@ body {
 }
 
 .text {
+    pointer-events: none;
     font-size: 2.5vw
 }
 
 p {
+    pointer-events: none;
     margin-bottom: 0.5em;
 }

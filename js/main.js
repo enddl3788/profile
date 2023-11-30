@@ -10,14 +10,14 @@ document.addEventListener('wheel', (e) => {
   }
 
   // 해당 페이지로 스크롤 이동
-  const targetPage = document.getElementById(`main_${currentPage}`);
+  const targetPage = document.getElementById(`main_1_${currentPage}`);
   if (targetPage) {
     window.scrollTo({
       top: targetPage.offsetTop,
       behavior: 'smooth',
     });
   } else {
-    console.error(`Page not found: main_${currentPage}`);
+    console.error(`Page not found: main_1_${currentPage}`);
   }
 });
 

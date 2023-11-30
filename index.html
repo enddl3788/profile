@@ -50,25 +50,25 @@
 	우주미아
 	우연한 사건으로 우주미아 된 나는 다른 차원의 지구로 이탈하게 되었습니다.
 -->
-	<body>
+	<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 		<section id="intro">
 			<p class="intro_text text-center fixed-bottom">이 웹에서 사용된 도트 그래픽의 저작권은 제작자에게 있으며, 상업 및 무단 배포를 금지합니다.</p>
 			<div class="cursor"></div>
 			<div class="follower">
 				<canvas class="canvas"></canvas>
 			</div>
-			<img class="earthImgBtn" src="./img/earth.gif"  onmouseover="scaleUp()" onmouseout="scaleDown()" alt="이미지 버튼">
+			<img class="earthImgBtn" src="./img/earth.gif"  onmouseover="scaleUp(earthImgBtn)" onmouseout="scaleDown(earthImgBtn)" alt="이미지 버튼">
 			<img class="clickImg" src="./img/click.gif" alt="이미지 버튼">
 		</section>
 
-		<section id="main">
+		<section class="main" id="main_1">
 			<!--
 			<img class="skill_machine" src="./img/object/skill_machine.gif" alt="기술 스택">
 			-->
 			<div class="main-background">
-				<div id="main_1">
-					<p class="subwayText-left"><big><strong>[자기소개] ▷</strong></big> 기술스택</p>
-					<p class="subwayText-right"><big><strong>[자기소개] ▷</strong></big> 기술스택</p>
+				<div id="main_1_1">
+					<p class="subwayText-left"><big><strong>[자기소개] ▶</strong></big> 기술스택</p>
+					<p class="subwayText-right"><big><strong>[자기소개] ▶</strong></big> 기술스택</p>
 					<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
 					<img class="subwayImg" src="./img/object/train.gif" alt="지하철">
 					<img class="astronautImg" src="./img/object/gone.png" alt="캐릭터">
@@ -89,7 +89,7 @@
 					<span>동</span>
 				  </h1>
 
-				<div id="main_2">
+				<div id="main_1_2">
 					<!--https://metromapmaker.com/?map=jnDNERKy-->
 					<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
 					<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
@@ -97,7 +97,7 @@
 					<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
 				</div>
 	
-				<div id="main_3">
+				<div id="main_1_3">
 					<hr/>
 					<p class="text"><big><strong>🏫 학력</strong></big></p>
 					<p class="text"><strong>컴퓨터공학과 학사</strong></p>
@@ -110,7 +110,7 @@
 					<p class="text">🔗 play.google.com/store/apps/dev?id=7544782687645797857</p>
 					<p class="text">🐱 github.com/enddl3788</p>
 				</div>
-				<input class="goupbtn" type="button" value="Top" onclick="goToTop()"></div>
+				<img class="goupbtn" src="./img/btn_up.gif" onmouseover="scaleUp(goupbtn)" onmouseout="scaleDown(goupbtn)" onclick="goToTop()" alt="상단이동 버튼">
 			</div>
 		</section>
 

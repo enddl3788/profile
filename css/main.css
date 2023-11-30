@@ -1,4 +1,4 @@
-#main {
+.main {
   position: relative;
   width: 100%;
   height: 100%;
@@ -8,14 +8,14 @@
   background-repeat: repeat;
 }
 
-#main_1 {
+#main_1_1 {
   width: 100%;
   height: 56.25vw; /* 9 / 16 * 100vw */
   overflow: hidden;
   position: static;
 }
 
-#main_2 {
+#main_1_2 {
   width: 90%;
   height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
@@ -30,7 +30,7 @@
   border-top-right-radius: 15px;
 }
 
-#main_3 {
+#main_1_3 {
   width: 90%;
   height: auto; /* 9 / 16 * 100vw */
   overflow: hidden;
@@ -93,6 +93,7 @@
 }
 
 .subwayText-right{
+  pointer-events: none;
   font-size: 1.5vw;
   position: absolute;
   top: 10.5vw;
@@ -106,9 +107,10 @@
   bottom: 5%;
   right: 5%;
   width: 50px;
-  height: 50px;
+  height: auto;
   border-radius: 80%;
-  background-color: #ffffff;
   position: fixed;
-  z-index: 2;
+  z-index: 5;
+  transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+  transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
 }
