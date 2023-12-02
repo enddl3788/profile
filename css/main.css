@@ -15,6 +15,13 @@
   position: relative;
 }
 
+.main_1 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
 .main_top {
   width: 90%;
   height: auto; /* 9 / 16 * 100vw */
@@ -37,7 +44,6 @@
   position: static;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 5%;
   background-color: white;
   padding-left: 5%;
   padding-right: 5%;
@@ -65,7 +71,7 @@
   z-index: 4;
   background-size: cover;
   pointer-events: none;
-  transform: translate(-50%, -90%); /* 중앙으로 이동하는 부분을 추가해줘 */
+  transform: translate(-50%, -90%); 
 }
 
 .subwayImg_img {
@@ -85,23 +91,25 @@
 }
 
 .subwayText-left{
+  width: 30vw;
   font-size: 1.5vw;
   position: absolute;
-  top: 10.5vw;
-  left: 20vw;
+  text-align: center;
+  white-space: nowrap;
+  top: 9vw;
+  left: 1vw;
   z-index: 2;
-  transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
 .subwayText-right{
+  width: 30vw;
   pointer-events: none;
   font-size: 1.5vw;
   position: absolute;
-  top: 10.5vw;
-  left: 88vw;
+  top: 9vw;
+  left: 69vw;
   white-space: nowrap;
   z-index: 2;
-  transform: translate(-50%, -50%); /* 중앙으로 이동하는 부분을 추가해줘 */
 }
 
 .goupbtn {
@@ -123,8 +131,35 @@
   right: 10%;
   width: 10%;
   height: auto;
-  border-radius: 80%;
   z-index: 3;
   transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
   transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+}
+
+.backBtn {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  width: 10%;
+  height: auto;
+  z-index: 3;
+  transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+  transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+}
+
+.nextPageBtn {
+  font-size: 2.5vw;
+  width: 80%;
+  margin: 10% 0 0 10%; /* 자식 요소 전체를 중앙 정렬하기 위해, 상단 및 왼쪽 margin을 마이너스 값으로 적용하기 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px; /* 동그랗게 만들기 */
+  cursor: pointer; 
+  transition: left 0.5s ease, top 0.5s ease; /* transition 속성 추가해서 스무스하게 만들어줘 */
+  transform-origin: center center; /* 크기 변화 중심을 요소의 가운데로 설정 */
+}
+
+.margin {
+  width: 100%;
+  height: 5vh;
 }

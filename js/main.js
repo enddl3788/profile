@@ -1,3 +1,8 @@
+var mainArr = [
+  ['#introduction', '#skill', '#solo', '#team'],
+  ['#introduction_main', '#skill_main', '#solo_main', '#team_main']
+];
+
 const introduction = document.querySelector('#introduction');
 const skill = document.querySelector('#skill');
 const solo = document.querySelector('#solo');
@@ -8,6 +13,14 @@ const skill_main = document.querySelector('#skill_main');
 const solo_main = document.querySelector('#solo_main');
 const team_main = document.querySelector('#team_main');
 
+const backBtn = document.querySelector('.backBtn');
+const nextBtn = document.querySelector('.nextBtn');
+const nextPageBtn = document.querySelector('#nextPageBtn');
+const nextPageBtn_end = document.querySelector('#nextPageBtn_end');
+
+nextPageBtn_end.style.display = "none";    //숨기기
+backBtn.style.display = "none";    //숨기기
+
 skill_main.style.display = "none";    //숨기기
 solo_main.style.display = "none";    //숨기기
 team_main.style.display = "none";    //숨기기
@@ -16,18 +29,28 @@ skill.style.display = "none";    //숨기기
 solo.style.display = "none";    //숨기기
 team.style.display = "none";    //숨기기
 
+let pageName = 0;
+let distancePage = 0;
 let currentPage = 1;
-const totalPages = 3; // 전체 페이지 수
+const totalPages = 4; // 전체 페이지 수
 
 document.addEventListener('wheel', (e) => {
   // 휠을 아래로 내릴 때
   if (e.deltaY > 0) {
-    currentPage = Math.min(totalPages, currentPage + 1);
+    currentPage = Math.min(totalPages , currentPage + 1);
   } else { // 휠을 위로 올릴 때
-    currentPage = Math.max(1, currentPage - 1);
+    currentPage = Math.max(1 , currentPage - 1);
   }
 
-  goTo(`main_${currentPage}`);
+  if (currentPage == 1) {
+    goTo(`.main`);
+  } else if (currentPage == 4 && pageName == 3) {
+    goTo('#nextPageBtn_end');
+  } else if (currentPage == 4 && pageName != 3) {
+    goTo('#nextPageBtn');
+  } else {
+    goTo(`#main_${currentPage + distancePage}`);
+  }
 });
 
 function goToTop() {
@@ -36,9 +59,7 @@ function goToTop() {
   }
 
 function goTo(el) {
-  const pageNumber = Number(el.match(/\d+$/)[0]); // el 문자열에서 마지막 숫자를 추출
-  currentPage = isNaN(pageNumber) ? 1 : pageNumber;
-  const targetPage = document.getElementById(el);
+  const targetPage = document.querySelector(el);
   if (targetPage) {
     window.scrollTo({
       top: targetPage.offsetTop,
@@ -50,16 +71,34 @@ function goTo(el) {
   }
 }
 
-function movePage(now, next) {
-  clickEvent = 1;
-
+function movePage(now, next, time) {
+  let timeSet = time;
   const nowPage = document.querySelector(now);
   const nextPage = document.querySelector(next);
 
-  fadeOut(nowPage, 1000);
-  fadeIn(nextPage, 2000);
+  fadeOut(nowPage, timeSet);
+  setTimeout(function () {
+    fadeIn(nextPage, timeSet);
+  }, timeSet);
+  //nowPage.style.display = "none"; 
+}
 
-  nowPage.style.display = "none"; 
+function distanceSet(distance) {
+  distancePage = distance * 2;
+  pageName = distance;
+}
 
-  clickEvent = 0;
+function btnUpdate() {
+  if (pageName == 0) {
+    backBtn.style.display = "none";    //숨기기
+  } else if (pageName == 3) {
+    nextPageBtn_end.style.display = "block";    //보이기
+    nextPageBtn.style.display = "none";    //숨기기
+    nextBtn.style.display = "none";    //숨기기
+  } else {
+    nextPageBtn_end.style.display = "none";
+    nextPageBtn.style.display = "block";
+    backBtn.style.display = "block";    //보이기
+    nextBtn.style.display = "block";    //보이기
+  }
 }

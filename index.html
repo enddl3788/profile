@@ -51,6 +51,7 @@
 	우연한 사건으로 우주미아 된 나는 다른 차원의 지구로 이탈하게 되었습니다.
 -->
 	<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+		<div id="fireworksContainer"></div>
 		<section id="intro">
 			<p class="intro_text text-center fixed-bottom">이 웹에서 사용된 도트 그래픽의 저작권은 제작자에게 있으며, 상업 및 무단 배포를 금지합니다.</p>
 			<div class="cursor"></div>
@@ -67,36 +68,36 @@
 			-->
 			<div class="main-background">
 				<div id="main_1">
-					<section id="introduction_main">
+					<div class="main_1" id="introduction_main">
 						<p class="subwayText-left"><big><strong>[자기소개] ▶</strong></big> 기술 스택</p>
 						<p class="subwayText-right"><big><strong>[자기소개] ▶</strong></big> 기술 스택</p>
 						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
-						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#introduction','#skill')" alt="다음으로">
-					</section>
+					</div>
 
-					<section id="skill_main">
+					<div class="main_1" id="skill_main">
 						<p class="subwayText-left">자기소개 <big><strong>▶ [기술 스택] ▶</strong></big> 개인 프로젝트</p>
 						<p class="subwayText-right">자기소개 <big><strong>▶ [기술 스택] ▶</strong></big> 개인 프로젝트</p>
 						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
-						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#skill','#solo')" alt="다음으로">
-					</section>
+					</div>
 
-					<section id="solo_main">
+					<div class="main_1" id="solo_main">
 						<p class="subwayText-left">기술 스택 <big><strong>▶ [개인 프로젝트] ▶</strong></big> 팀 프로젝트</p>
 						<p class="subwayText-right">기술 스택 <big><strong>▶ [개인 프로젝트] ▶</strong></big> 팀 프로젝트</p>
-						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
-						<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage('#solo','#team')" alt="다음으로">
-					</section>
+						<img class="subwayImg_img" src="img\project\skumap\skumap_background.png" alt="지하철">
+					</div>
 
-					<section id="team_main">
+					<div class="main_1" id="team_main">
 						<p class="subwayText-left">개인 프로젝트 <big><strong>▶ [팀 프로젝트]</strong></big></p>
 						<p class="subwayText-right">개인 프로젝트 <big><strong>▶ [팀 프로젝트]</strong></big></p>
-						<img class="subwayImg_img" src="./img/object/subway_map.png" alt="지하철">
-					</section>
-					
+						<img class="subwayImg_img" src="img\project\gunbam\gunbam_background.png" alt="지하철">
+					</div>
+
+					<img class="backBtn" src="./img/btn_left.gif" onmouseover="scaleUp('.backBtn')" onmouseout="scaleDown('.backBtn')" onclick="movePage(mainArr[0][pageName], mainArr[0][pageName - 1], 500); movePage(mainArr[1][pageName], mainArr[1][pageName - 1], 1); distanceSet(pageName - 1); btnUpdate();" alt="이전으로">
+					<img class="nextBtn" src="./img/btn_right.gif" onmouseover="scaleUp('.nextBtn')" onmouseout="scaleDown('.nextBtn')" onclick="movePage(mainArr[0][pageName], mainArr[0][pageName + 1], 500); movePage(mainArr[1][pageName], mainArr[1][pageName + 1], 1); distanceSet(pageName + 1); btnUpdate();" alt="다음으로">
+				
 					<img class="subwayImg" src="./img/object/train.gif" alt="지하철">
 					<img class="astronautImg" src="./img/object/gone.png" alt="캐릭터">
-					<span onclick="goTo('main_2')"></span>
+					<span onclick="goTo(`#main_${2 + distancePage}`);"></span>
 				</div>
 
 				<section id="introduction">
@@ -104,8 +105,8 @@
 						<!--https://metromapmaker.com/?map=jnDNERKy-->
 						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
 						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
-						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
-						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 목표로 하고 있습니다.</p>
+						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 있습니다.</p>
 					</div>
 		
 					<div class="main_bottom" id="main_3">
@@ -126,64 +127,132 @@
 				<section id="skill">
 					<div class="main_top" id="main_4">
 						<!--https://metromapmaker.com/?map=jnDNERKy-->
-						<p class="text"><big><strong>언어</strong></big></p>
+						<p class="text"><big><strong>🧰 사용하는 언어</strong></big></p>
+						<p class="text"><strong>🔧 Back-end</strong></p>
+						<p class="text">Java : 앱 개발 언어</p>
+						<ul>
+							<li class="text">MVVM 디자인 패턴으로 Android 앱을 개발해 본 경험이 있습니다.</li>
+							<li class="text">Firebase와 Google Cloud Console을 연동해 본 경험이 있습니다.</li>
+							<li class="text">기본적인 알고리즘 문제를 해결 할 수 있습니다.</li>
+							<li class="text">사용자가 필요한 정보를 웹에서 크롤링을 할 수 있습니다.</li>
+						</ul>
+						<p class="text">Python : 딥러닝 모델 개발 언어</p>
+						<ul>
+							<li class="text">데이터 분석 및 머신러닝을 해 본 경험이 있습니다.</li>
+							<li class="text">기본적인 알고리즘 문제를 해결 할 수 있습니다.</li>
+							<li class="text">데이터를 처리하는 프로그램을 제작하여 처리할 수 있습니다.</li>
+						</ul>
+						<p class="text">JavaScript : 웹 개발 언어</p>
+						<ul>
+							<li class="text">웹 개발을 해 본 경험이 있습니다.</li>
+							<li class="text">웹 디자인 애니메이션을 구현 할 수 있습니다.</li>
+						</ul>
+						<p class="text"><strong>🧱 Front-end</strong></p>
+						<p class="text">HTML : 웹 디자인 언어</p>
+						<p class="text">CSS : 웹 스타일 언어</p>
+						<p class="text">XML : 앱 디자인 언어</p>
 					</div>
 		
 					<div class="main_bottom" id="main_5">
 						<hr/>
-						<p class="text"><big><strong>프로그램</strong></big></p>
+						<p class="text"><big><strong>🧰 개발 도구</strong></big></p>
+						<p class="text"><strong>💻 코딩용</strong></p>
+						<p class="text">Visual Studio Code : 주요 소스 코드 편집기</p>
+						<p class="text">Android Studio : 안드로이드 개발 환경</p>
+						<p class="text">Firebase : 웹 및 앱 개발 플랫폼</p>
+						<ul>
+							<li class="text">주로 데이터베이스 저장 용도로 사용</li>
+							<li class="text">Authentication으로 사용자 데이터 관리</li>
+							<li class="text">Analytics로 트래픽 및 오류 관리</li>
+						</ul>
+						<p class="text">Google Cloud Console : 클라우드 컴퓨팅 플랫폼</p>
+						<p class="text">Colab : 머신러닝을 위한 클라우드 컴퓨팅 플랫폼</p>
+						<p class="text">Git : 버전관리</p>
+						<p class="text">Github : 팀 프로젝트를 위한 저장소</p>
+						<p class="text"><strong>🎬 그 외</strong></p>
+						<p class="text">Aseprinte : 픽셀 그래픽 이미지 편집기</p>
+						<p class="text">EzPhoto : 이미지 편집기</p>
+						<p class="text">Vegas : 영상 편집기</p>
 					</div>
 				</section>
 
 				<section id="solo">
 					<div class="main_top" id="main_6">
-						<!--https://metromapmaker.com/?map=jnDNERKy-->
-						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
-						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
-						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
-						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+						<img style="width: 20%;" src="img\project\skumap\skumap_logo.png"/>
+						<p class="text"><big><strong>성결대 캠퍼스 맵 어플 'SKU_MAP'</strong></big></p>
+
+						<p class="text"><strong>💬 한 줄 소개 :</strong><br/>성결대 캠퍼스 맵은 저의 대학생 생활을 바탕으로, 학교에서 학생들과 교직원들이 불편함을 느끼거나 알기 어려웠던 부분을 해결하기 위해 개발되었습니다.</p>
+						<p class="text"><strong>🔗 플레이 스토어 링크 :</strong><br/><a href="https://play.google.com/store/apps/details?id=com.yebin.SKUMAP">play.google.com/store/apps/details?id=com.yebin.SKUMAP</a></p>
+						<p class="text"><strong>🧰 개발 라이브러리 :</strong> Kakao Maps API</p>
+						<p class="text"><strong>🧰 개발 언어 :</strong> Java, XML</p>
+						<p class="text"><strong>🧰 개발 툴 :</strong> Android Studio, Firebase, Google Cloud Console</p>
+						<p class="text"><strong>📅 개발 기간 :</strong> 2021.09 ~</p>
+						<p class="text"><strong>👨🏻‍💻 개발 인원 :</strong> 1명</p>
+						<p class="text"><strong>📝 상태 :</strong> 유지보수</p>
 					</div>
 		
 					<div class="main_bottom" id="main_7">
 						<hr/>
-						<p class="text"><big><strong>🏫 학력</strong></big></p>
-						<p class="text"><strong>컴퓨터공학과 학사</strong></p>
-						<p class="text">성결대학교 - 경기도 안양시</p>
-						<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
-						<hr/>
-						<p class="text"><big><strong>📱 연락처</strong></big></p>
-						<p class="text">📞 010-2866-3788</p>
-						<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
-						<p class="text">🔗 <a href="https://play.google.com/store/apps/dev?id=7544782687645797857">play.google.com/store/apps/dev?id=7544782687645797857</a></p>
-						<p class="text">🐱 <a href="https://github.com/enddl3788">github.com/enddl3788</a></p>
+						<p class="text"><big><strong>📌 주요 기능</strong></big></p>
+						<ol>
+							<li class="text"><strong>불편한 학사일정 확인 :</strong></li>
+							<p class="text">대학생활에서 학사일정을 자주 확인해야 했지만, 번거로움으로 자주 놓치는 일이 많았습니다. 성결대 캠퍼스 맵은 학사일정을 자동으로 업데이트하여 학생들이 놓치지 않도록 도와줍니다.</p>
+							<li class="text"><strong>식단표 및 식사 장소 찾기 어려움 :</strong></li>
+							<p class="text">식사 시간에 학생식당이나 교직원식당의 메뉴와 위치를 찾기 어려웠습니다. 실시간 식단표 조회와 건물 정보 제공으로 이제는 편하게 식사를 즐길 수 있습니다.</p>
+							<li class="text"><strong>길 찾기 및 교통 정보 부족 :</strong></li>
+							<p class="text">대학 내 이동이나 외부로의 이동이 어려웠습니다. 길찾기 기능과 셔틀버스 시간표를 통해 학교 내에서도 원활한 이동이 가능합니다.</p>
+							<li class="text"><strong>캠퍼스 생활 정보 부재 :</strong></li>
+							<p class="text">주요 건물 정보 및 성결대학교 포털 연동을 통해 학사 정보에 쉽게 접근할 수 있게 되었습니다.</p>
+						</ol>
+
+						<p class="text">
+							성결대 캠퍼스 맵은 사용자들이 대학생활에서 직면한 다양한 어려움들을 고려하여 개발되었으며, 지속적인 피드백과 업데이트를 통해 더욱 완벽한 도구로 성장하고 있습니다.
+						</p>
 					</div>
 				</section>
 
 				<section id="team">
 					<div class="main_top" id="main_8">
-						<!--https://metromapmaker.com/?map=jnDNERKy-->
-						<p class="text"><big><strong>👨🏻‍🚀 송예빈 SONG YE BIN</strong></big></p>
-						<p class="text">안녕하세요, 소통과 협업을 중요시하는 개발자 송예빈입니다.</p>
-						<p class="text">새로운 기술과 도구에 대한 열정을 가지고 있으며, 문제 해결과 <br/>창의적인 아이디어를 통해 현실적인 솔루션을 제공하는 것을 <br/>목표로 하고 있습니다.</p>
-						<p class="text">프로젝트에 참여할 때는 유연성과 책임감을 갖고 업무를 수행하여 최상의 결과물을 제공하기 위해 노력하고 있습니다. 함께 일하며 <br/>효과적인 솔루션을 구현하고 성공을 이끌어내는 것을 기대하고 <br/>있습니다. 감사합니다.</p>
+						<img style="width: 20%;" src="img\project\gunbam\gunbam_logo.png"/>
+						<p class="text"><big><strong>군인 커뮤니티 어플 '군밤'</strong></big></p>
+
+						<p class="text"><strong>💬 한 줄 소개 :</strong><br/>군밤은 대학교 졸업작품으로 제작하였으며, 군인들을 위한 특별한 소통 플랫폼입니다. 군밤만의 이미지 필터링 모델이 들어가 보안을 강화했습니다.</p>
+						<p class="text"><strong>🔗 플레이 스토어 링크 :</strong><br/><a href="https://https://play.google.com/store/apps/details?id=military.gunbam">https://play.google.com/store/apps/details?id=military.gunbam</a></p>
+						<p class="text"><strong>🧰 개발 라이브러리 :</strong> Kakao Maps API, TensorFlow</p>
+						<p class="text"><strong>🧰 개발 언어 :</strong> Java, XML, Python</p>
+						<p class="text"><strong>🧰 개발 툴 :</strong> Android Studio, Firebase, Google Cloud Console, Colab</p>
+						<p class="text"><strong>📅 개발 기간 :</strong> 2022.09 ~</p>
+						<p class="text"><strong>👨🏻‍💻 개발 인원 :</strong> 4명</p>
+						<p class="text"><strong>📝 상태 :</strong> 개발 완료</p>
 					</div>
 		
 					<div class="main_bottom" id="main_9">
 						<hr/>
-						<p class="text"><big><strong>🏫 학력</strong></big></p>
-						<p class="text"><strong>컴퓨터공학과 학사</strong></p>
-						<p class="text">성결대학교 - 경기도 안양시</p>
-						<p class="text">2020.03 ~ 2024.02 (졸업예정)</p>
-						<hr/>
-						<p class="text"><big><strong>📱 연락처</strong></big></p>
-						<p class="text">📞 010-2866-3788</p>
-						<p class="text">📧 enddl3788@sungkyul.ac.kr</p>
-						<p class="text">🔗 <a href="https://play.google.com/store/apps/dev?id=7544782687645797857">play.google.com/store/apps/dev?id=7544782687645797857</a></p>
-						<p class="text">🐱 <a href="https://github.com/enddl3788">github.com/enddl3788</a></p>
+						<p class="text"><big><strong>📌 주요 기능</strong></big></p>
+						<ol>
+							<li class="text"><strong>군 보안 강화 기능 :</strong></li>
+							<p class="text">군 보안 관련 이미지 객체 필터링 기능으로 군 내 안전한 소통을 지원하며 보안을 강화합니다.</p>
+							<li class="text"><strong>TMO 위치 표시 :</strong></li>
+							<p class="text">TMO 위치 제공으로 신병들의 효율적인 활동을 지원합니다.</p>
+							<li class="text"><strong>군인 신분 확인 기능 :</strong></li>
+							<p class="text">군인 신분 확인을 통해 보안을 강화하고 병사들을 위한 안전한 공간을 제공합니다.</p>
+							<li class="text"><strong>전역 카운트다운 :</strong></li>
+							<p class="text">전역을 앞두고 있는 군인들을 위한 카운트다운 기능을 제공하여 기다리는 기간을 더 흥미롭게 만듭니다.</p>
+							<li class="text"><strong>다양한 커뮤니티 기능 :</strong></li>
+							<p class="text">게시판, 총알(좋아요), 익명성 체크 등을 통해 소통과 정보 공유를 촉진하며 사용자 간의 활발한 교류를 지원합니다.</p>
+							<li class="text"><strong>익명성 보장된 마음의 편지 기능 :</strong></li>
+							<p class="text">사용자는 익명으로 마음의 편지를 작성하고, 관리자는 신속한 확인과 조치를 취할 수 있습니다.</p>
+						</ol>
+
+						<p class="text">
+							'군밤'은 군인들의 특별한 밤을 만들어내고 군 생활을 더욱 의미있게 채워주는 플랫폼으로, 안전하고 신뢰성 있는 소통의 공간을 제공합니다. 사용자들 간의 교류를 촉진하며 군 생활을 더욱 풍요롭게 만들었습니다.
+						</p>
 					</div>
 				</section>
-
+				<button class="nextPageBtn" id="nextPageBtn" onmouseover="scaleUp('#nextPageBtn')" onmouseout="scaleDown('#nextPageBtn')" onclick="movePage(mainArr[0][pageName], mainArr[0][pageName + 1], 500); movePage(mainArr[1][pageName], mainArr[1][pageName + 1], 1); distanceSet(pageName + 1); btnUpdate(); goToTop();">다음 역으로 이동</button>
+				<button class="nextPageBtn" id="nextPageBtn_end" onmouseover="scaleUp('#nextPageBtn_end')" onmouseout="scaleDown('#nextPageBtn_end')">종점 입니다</button>
 				<img class="goupbtn" src="./img/btn_up.gif" onmouseover="scaleUp('.goupbtn')" onmouseout="scaleDown('.goupbtn')" onclick="goToTop()" alt="상단이동 버튼">
+				<p class="margin"> </p>
 			</div>
 		</section>
 

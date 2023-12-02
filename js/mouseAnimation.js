@@ -102,7 +102,7 @@ earthImgBtn.addEventListener("mousedown", function () {
         currentSize = parseFloat(getComputedStyle(earthImgBtn).getPropertyValue("transform").split(",")[3].trim());
         earthImgBtn.style.transform = "scale(" + (currentSize + scaleAmount) + ")";
             // 만약 특정 크기에 도달하면 clearInterval을 사용하여 종료
-        if (currentSize >= 23) {
+        if (currentSize >= 25) {
             clearInterval(scaleInterval);
         }
     }, 20);
