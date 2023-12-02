@@ -3,6 +3,9 @@ var mainArr = [
   ['#introduction_main', '#skill_main', '#solo_main', '#team_main']
 ];
 
+const solo_moblie_container = document.querySelector('#solo_moblie_container');
+const team_moblie_container = document.querySelector('#team_moblie_container');
+
 const introduction = document.querySelector('#introduction');
 const skill = document.querySelector('#skill');
 const solo = document.querySelector('#solo');
@@ -102,3 +105,13 @@ function btnUpdate() {
     nextBtn.style.display = "block";    //보이기
   }
 }
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const translateY = `translateX(${-scrollY/3}px)`;
+    if (pageName == 2) {
+      solo_moblie_container.style.transform = translateY;
+    } else if (pageName == 3) {
+      team_moblie_container.style.transform = translateY;
+    }
+});
