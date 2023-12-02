@@ -115,3 +115,8 @@ window.addEventListener('scroll', () => {
       team_moblie_container.style.transform = translateY;
     }
 });
+
+function playMusic() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}

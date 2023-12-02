@@ -303,8 +303,9 @@
 						</p>
 					</div>
 				</section>
+				<audio id="audio" src="./audio/tada.mp3"></audio>
 				<button class="nextPageBtn" id="nextPageBtn" onmouseover="scaleUp('#nextPageBtn')" onmouseout="scaleDown('#nextPageBtn')" onclick="movePage(mainArr[0][pageName], mainArr[0][pageName + 1], 500); movePage(mainArr[1][pageName], mainArr[1][pageName + 1], 1); distanceSet(pageName + 1); btnUpdate(); goToTop();">다음 역으로 이동</button>
-				<button class="nextPageBtn" id="nextPageBtn_end" onmouseover="scaleUp('#nextPageBtn_end')" onmouseout="scaleDown('#nextPageBtn_end')" onclick="party.confetti(this)">종점 입니다</button>
+				<button class="nextPageBtn" id="nextPageBtn_end" onmouseover="scaleUp('#nextPageBtn_end')" onmouseout="scaleDown('#nextPageBtn_end')" onclick="party.confetti(this); playMusic();">종점 입니다</button>
 				<img class="goupbtn" src="./img/btn_up.gif" onmouseover="scaleUp('.goupbtn')" onmouseout="scaleDown('.goupbtn')" onclick="goToTop()" alt="상단이동 버튼">
 				<p class="margin"> </p>
 			</div>
